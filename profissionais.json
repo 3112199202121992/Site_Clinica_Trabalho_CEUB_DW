@@ -1,0 +1,27 @@
+[
+    {
+      "nome": "Dra. Beatriz Souza",
+      "especialidade": "Clínica Geral",
+      "disponibilidade": "Segunda a sexta, 08h às 17h"
+    },
+    {
+      "nome": "Dr. Carlos Farias",
+      "especialidade": "Fisioterapia",
+      "disponibilidade": "Terças e quintas, 13h às 19h"
+    },
+    {
+      "nome": "Isaura Ester",
+      "especialidade": "Nutrição",
+      "disponibilidade": "Segundas, quartas e sextas, 09h às 16h"
+    },
+    {
+      "nome": "Patrícia Almeida Santos",
+      "especialidade": "Enfermagem",
+      "disponibilidade": "Segundas, quartas e sextas, 09h às 18h"
+    },
+    {
+      "nome": "Paulo Cunha",
+      "especialidade": "Terapeuta Holístico",
+      "disponibilidade": "Segundas, quartas e sextas, 09h às 18h"
+    }]
+    

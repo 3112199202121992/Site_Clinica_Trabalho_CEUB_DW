@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clínica Félix Saúde</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Clínica Félix Saúde</h1>
+    <h2>Saúde e Conforto para seu Dia a Dia </h2>
+  </header>
+
+<div id="API">
+  <section id="busca-profissionais">
+    <h2>Consultar Profissionais</h2>
+    <input type="text" id="filtroEspecialidade" placeholder="Digite a especialidade...">
+    <button onclick="buscarProfissionais()">Buscar</button>
+    <ul id="resultado"></ul>
+  </section>
+  
+  <script>
+    async function buscarProfissionais() {
+      const filtro = document.getElementById('filtroEspecialidade').value;
+      const url = `http://localhost:3000/profissionais?especialidade=${filtro}`;
+      
+      try {
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
+  
+        const lista = document.getElementById('resultado');
+        lista.innerHTML = '';
+  
+        if (dados.length === 0) {
+          lista.innerHTML = '<li>Nenhum profissional encontrado.</li>';
+          return;
+        }
+  
+        dados.forEach(p => {
+          const li = document.createElement('li');
+          li.innerText = `${p.nome} - ${p.especialidade} (${p.disponibilidade})`;
+          lista.appendChild(li);
+        });
+  
+      } catch (erro) {
+        alert('Erro ao consultar API');
+        console.error(erro);
+      }
+    }
+  </script>
+  
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="cards-container">
+      <div class="card">
+        <img src="Imagens/atendimentos.jpg" alt="Atendimento">
+        <p>Consulte nossas especialidades</p>
+      </div>
+      <div class="card">
+        <img src="Imagens/exames.jpg" alt="Exames laboratoriais">
+        <p>Exames laboratoriais e de imagem</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="equipe">
+    <h2>Nossa Equipe</h2>
+    <div class="cards-container">
+      <div class="card">
+        <img src="Imagens/Beatriz.jpg" alt="Dra. Beatriz">
+        <p><strong>Dra. Beatriz Souza</strong><br>Clínica Geral</p>
+      </div>
+      <div class="card">
+        <img src="Imagens/Carlos.jpg" alt="Dr. Carlos">
+        <p><strong>Dr. Carlos Farias</strong><br>Fisioterapeuta</p>
+      </div>
+      <div class="card">
+        <img src="Imagens/Isaura.jpg" alt="Isaura">
+        <p><strong>Isaura Ester</strong><br>Nutricionista</p>
+      </div>
+      <div class="card">
+        <img src="Imagens/Patricia.jpg" alt="Patrícia">
+        <p><strong>Patrícia Almeida Santos</strong><br>Enfermeira</p>
+      </div>
+      <div class="card">
+        <img src="Imagens/Paulo.jpg" alt="Paulo">
+        <p><strong>Paulo Cunha</strong><br>Terapeuta Holístico</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="formulario">
+    <h2>Saiba mais:</h2>
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="text" placeholder="Cidade" required>
+      <input type="text" placeholder="Estado" required>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Clínica Félix Saúde. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
