@@ -1,0 +1,25 @@
+{
+  "name": "projeto_uniceub",
+  "version": "1.0.0",
+  "description": "Projeto de site institucional com sistema de consulta de profissionais por especialidade, utilizando API em Node.js e interface HTML/CSS/JS.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3112199202121992/Site_Clinica_Trabalho_CEUB_DW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3112199202121992/Site_Clinica_Trabalho_CEUB_DW/issues"
+  },
+  "homepage": "https://github.com/3112199202121992/Site_Clinica_Trabalho_CEUB_DW#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
